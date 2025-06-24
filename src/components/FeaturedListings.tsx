@@ -1,8 +1,8 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { MessageCircle, MapPin, Star, Clock } from "lucide-react";
+import ContactSellerModal from "./ContactSellerModal";
 
 const featuredAds = [
   {
@@ -146,10 +146,12 @@ const FeaturedListings = () => {
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <Button className="bg-primary hover:bg-primary/90 text-white font-cairo">
-                    <MessageCircle className="w-4 h-4 ml-2" />
-                    تواصل مع البائع
-                  </Button>
+                  <ContactSellerModal sellerName={ad.seller} adTitle={ad.title}>
+                    <Button className="bg-primary hover:bg-primary/90 text-white font-cairo">
+                      <MessageCircle className="w-4 h-4 ml-2" />
+                      تواصل مع البائع
+                    </Button>
+                  </ContactSellerModal>
                   
                   <div className="flex items-center text-gray-600 text-sm">
                     <span className="font-cairo">{ad.location}</span>

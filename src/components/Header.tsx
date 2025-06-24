@@ -1,7 +1,10 @@
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Search, Menu, Phone, User, PlusCircle } from "lucide-react";
+import { Search, Menu, Phone, User, PlusCircle, Filter } from "lucide-react";
+import LoginModal from "./LoginModal";
+import PostAdModal from "./PostAdModal";
+import SearchModal from "./SearchModal";
 
 const Header = () => {
   return (
@@ -44,28 +47,39 @@ const Header = () => {
               <Input
                 type="text"
                 placeholder="ابحث عن المنتجات، الموردين، المستوردين..."
-                className="w-full pr-12 pl-4 py-3 text-lg border-2 border-gray-200 focus:border-primary rounded-lg text-right"
+                className="w-full pr-12 pl-24 py-3 text-lg border-2 border-gray-200 focus:border-primary rounded-lg text-right"
                 dir="rtl"
               />
               <Search className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-              <Button className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-primary hover:bg-primary/90">
-                بحث
-              </Button>
+              <div className="absolute left-2 top-1/2 transform -translate-y-1/2 flex gap-1">
+                <SearchModal>
+                  <Button variant="outline" size="sm" className="font-cairo">
+                    <Filter className="w-4 h-4" />
+                  </Button>
+                </SearchModal>
+                <Button className="bg-primary hover:bg-primary/90 font-cairo">
+                  بحث
+                </Button>
+              </div>
             </div>
           </div>
 
           {/* Action buttons */}
           <div className="flex items-center space-x-3 space-x-reverse">
-            <Button variant="outline" className="hidden lg:flex items-center border-primary text-primary hover:bg-primary hover:text-white">
-              <User className="w-4 h-4 ml-2" />
-              تسجيل الدخول
-            </Button>
+            <LoginModal>
+              <Button variant="outline" className="hidden lg:flex items-center border-primary text-primary hover:bg-primary hover:text-white">
+                <User className="w-4 h-4 ml-2" />
+                تسجيل الدخول
+              </Button>
+            </LoginModal>
             
-            <Button className="bg-accent hover:bg-accent/90 text-white font-medium">
-              <PlusCircle className="w-4 h-4 ml-2" />
-              <span className="hidden sm:inline">نشر إعلان</span>
-              <span className="sm:hidden">نشر</span>
-            </Button>
+            <PostAdModal>
+              <Button className="bg-accent hover:bg-accent/90 text-white font-medium">
+                <PlusCircle className="w-4 h-4 ml-2" />
+                <span className="hidden sm:inline">نشر إعلان</span>
+                <span className="sm:hidden">نشر</span>
+              </Button>
+            </PostAdModal>
 
             <Button variant="outline" size="icon" className="md:hidden">
               <Menu className="w-5 h-5" />
@@ -79,10 +93,15 @@ const Header = () => {
             <Input
               type="text"
               placeholder="ابحث عن المنتجات، الموردين..."
-              className="w-full pr-10 pl-4 py-2 border-2 border-gray-200 focus:border-primary rounded-lg text-right"
+              className="w-full pr-10 pl-16 py-2 border-2 border-gray-200 focus:border-primary rounded-lg text-right"
               dir="rtl"
             />
             <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+            <SearchModal>
+              <Button variant="outline" size="sm" className="absolute left-2 top-1/2 transform -translate-y-1/2">
+                <Filter className="w-4 h-4" />
+              </Button>
+            </SearchModal>
           </div>
         </div>
       </div>
