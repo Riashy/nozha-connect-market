@@ -13,59 +13,59 @@ import {
 
 const categories = [
   {
-    name: "Electronics",
-    nameAr: "إلكترونيات",
+    name: "إلكترونيات",
+    nameEn: "Electronics",
     icon: Smartphone,
-    count: "250+ ads",
+    count: "+250 إعلان",
     color: "bg-blue-500"
   },
   {
-    name: "Appliances",
-    nameAr: "أجهزة منزلية",
+    name: "أجهزة منزلية",
+    nameEn: "Appliances",
     icon: Zap,
-    count: "180+ ads",
+    count: "+180 إعلان",
     color: "bg-purple-500"
   },
   {
-    name: "Foodstuff",
-    nameAr: "مواد غذائية",
+    name: "مواد غذائية",
+    nameEn: "Foodstuff",
     icon: ShoppingBag,
-    count: "320+ ads",
+    count: "+320 إعلان",
     color: "bg-green-500"
   },
   {
-    name: "Textiles",
-    nameAr: "منسوجات",
+    name: "منسوجات",
+    nameEn: "Textiles",
     icon: Shirt,
-    count: "150+ ads",
+    count: "+150 إعلان",
     color: "bg-pink-500"
   },
   {
-    name: "Automotive",
-    nameAr: "قطع غيار",
+    name: "قطع غيار",
+    nameEn: "Automotive",
     icon: Car,
-    count: "120+ ads",
+    count: "+120 إعلان",
     color: "bg-red-500"
   },
   {
-    name: "Construction",
-    nameAr: "مواد بناء",
+    name: "مواد بناء",
+    nameEn: "Construction",
     icon: Home,
-    count: "90+ ads",
+    count: "+90 إعلان",
     color: "bg-orange-500"
   },
   {
-    name: "Machinery",
-    nameAr: "معدات",
+    name: "معدات",
+    nameEn: "Machinery",
     icon: Wrench,
-    count: "75+ ads",
+    count: "+75 إعلان",
     color: "bg-gray-600"
   },
   {
-    name: "Healthcare",
-    nameAr: "منتجات طبية",
+    name: "منتجات طبية",
+    nameEn: "Healthcare",
     icon: Heart,
-    count: "60+ ads",
+    count: "+60 إعلان",
     color: "bg-teal-500"
   }
 ];
@@ -75,11 +75,11 @@ const CategoriesSection = () => {
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold text-secondary mb-4 font-poppins">
-            Browse by Category
+          <h2 className="text-3xl lg:text-4xl font-bold text-secondary mb-4 font-cairo">
+            تصفح حسب الفئة
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Find the right products and suppliers across all major import-export categories
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto font-cairo">
+            اعثر على المنتجات والموردين المناسبين في جميع فئات الاستيراد والتصدير الرئيسية
           </p>
         </div>
 
@@ -95,15 +95,15 @@ const CategoriesSection = () => {
                   <category.icon className="w-8 h-8 text-white" />
                 </div>
                 
-                <h3 className="font-semibold text-lg text-secondary mb-1 group-hover:text-primary transition-colors">
+                <h3 className="font-semibold text-lg text-secondary mb-1 group-hover:text-primary transition-colors font-cairo">
                   {category.name}
                 </h3>
                 
-                <p className="text-sm text-gray-500 mb-2 font-cairo">
-                  {category.nameAr}
+                <p className="text-sm text-gray-500 mb-2">
+                  {category.nameEn}
                 </p>
                 
-                <p className="text-sm text-primary font-medium">
+                <p className="text-sm text-primary font-medium font-cairo">
                   {category.count}
                 </p>
               </CardContent>
@@ -112,8 +112,8 @@ const CategoriesSection = () => {
         </div>
 
         <div className="text-center mt-8">
-          <button className="text-primary hover:text-secondary font-medium text-lg transition-colors duration-200 hover:underline">
-            View All Categories →
+          <button className="text-primary hover:text-secondary font-medium text-lg transition-colors duration-200 hover:underline font-cairo">
+            عرض جميع الفئات ←
           </button>
         </div>
       </div>
